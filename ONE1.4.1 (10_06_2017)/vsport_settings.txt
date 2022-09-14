@@ -1,0 +1,7 @@
+Scenario.name = Vsport
+Group.router = VsportRouter
+VsportRouter.ReplicationMode = true
+VsportRouter.NrReplics = 8
+VsportRouter.TimeOld = 0
+VsportRouter.TimeMax = 300
+VsportRouter.RadiusMax = 500

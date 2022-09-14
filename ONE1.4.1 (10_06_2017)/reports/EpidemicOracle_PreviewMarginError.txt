@@ -1,0 +1,12 @@
+Preview Destination Location - Average Error: [EpidemicOracle]
+D[0-200]: NaN
+D[200-400]: NaN
+D[400-600]: NaN
+D[600-800]: NaN
+D[800-mais]: NaN
+---------------
+T[0-60]: NaN
+T[60-120]: NaN
+T[120-180]: NaN
+T[180-240]: NaN
+T[240-mais]: NaN

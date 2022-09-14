@@ -1,0 +1,163 @@
+# ------------------------------
+# -- Configurações do Cenário --
+# ------------------------------
+Scenario.name = tokyo_scenario
+Scenario.simulateConnections = true
+Scenario.updateInterval = 0.1
+#(12 horas)
+Scenario.endTime = 43200 		
+
+# ----------------------------------------
+# -- Interface Bluetooth (Todos os Nós) --
+# ----------------------------------------
+btInterface.type = SimpleBroadcastInterface
+btInterface.transmitSpeed = 250k
+btInterface.transmitRange = 10
+
+# -----------------------------------
+# -- Número Total de Grupos de Nós --
+# -----------------------------------
+Scenario.nrofHostGroups = 3
+# -----------------------------------
+
+# -------------------------------------------
+# -- Configurações Padrões (Todos os Nós)  --
+# -------------------------------------------
+Group.movementModel = ShortestPathMapBasedMovement
+Group.router = EpidemicRouter
+Group.bufferSize = 5M
+Group.waitTime = 0, 120
+
+# -- Todos os Nós Possuem Interface Bluetooth --
+# ----------------------------------------------
+Group.nrofInterfaces = 1
+Group.interface1 = btInterface
+
+# -- Velocidade de uma pessoa caminhando --
+# -----------------------------------------
+Group.speed = 0.5, 1.5
+# ----------------------------------------------
+
+# -- Tempo de Vida das Mensagens: 300 minutes (5 horas) --
+# --------------------------------------------------------
+Group.msgTtl = 300
+Group.nrofHosts = 60
+# --------------------------------------------------------
+
+# ----------------------------------------------------------
+# -- Primeiro Grupo (pedestres) configurações específicas --
+# ----------------------------------------------------------
+Group1.groupID = pedA
+Group1.bufferSize = 2M
+# ----------------------------------------------------------
+
+# ------------------------------------------------------
+# -- Segundo Grupo (carros) configurações específicas --
+# ------------------------------------------------------
+Group2.groupID = car
+Group2.bufferSize = 5M
+
+# -- Carros podem se mover apenas nas ruas -- 
+# -------------------------------------------
+Group2.okMaps = 1
+#(10-50 km/h)
+Group2.speed = 2.7, 13.9 		
+# ------------------------------------------------------
+
+# ----------------------------------------------------------
+# -- Terceiro Grupo (pedestres) configurações específicas --
+# ----------------------------------------------------------
+Group3.groupID = pedB
+Group3.bufferSize = 2M
+# ----------------------------------------------------------
+
+# ----------------------------------------
+# -- Parâmetros de criação de Mensagens --
+# ---------------------------------------- 
+#(Nr. de eventos gerados)
+Events.nrof = 1 			
+
+#(Classe geradora de eventos)
+Events1.class = MessageEventGenerator	
+
+#(Uma nova mensagem a cada 25-35 segundos)
+Events1.interval = 25,35		
+
+#(Tamanho das mensagens entre 500kb-1Mb)
+Events1.size = 500k,1M			
+
+#(Limite da Mensagem - baseado no endereço de origem/destino)
+Events1.hosts = 0,125			
+
+#(Prefixo do ID da mensagem)
+Events1.prefix = M	
+# ---------------------------------------- 	
+
+# ------------------------------------------ 
+# -- Configurações do Modelo de Movimento --
+# ------------------------------------------ 
+#(Semente para o Modelo de Movimento - pseudo aleatório)
+MovementModel.rngSeed = 1		
+
+#(Tamanho, em metros da, Área do cenário de simulação)
+MovementModel.worldSize = 4500, 3400	
+
+MovementModel.warmup = 1000		
+# ------------------------------------------ 
+
+# ----------------------------------------------------------------------
+# -- Configurações Específicas do Modelo de Movimento Baseado em Mapa --
+# ---------------------------------------------------------------------- 
+MapBasedMovement.nrofMapFiles = 4
+MapBasedMovement.mapFile1 = data/roads.wkt
+MapBasedMovement.mapFile2 = data/main_roads.wkt
+MapBasedMovement.mapFile3 = data/pedestrian_paths.wkt
+MapBasedMovement.mapFile4 = data/shops.wkt
+# ---------------------------------------------------------------------- 
+
+# ----------------------------------------------
+# -- Configurações do Relatório de Resultados --
+# ----------------------------------------------
+#(Nr. de relatórios gerados)
+Report.nrofReports = 1			
+
+Report.warmup = 0
+
+#(Diretório onde os relatórios serão salvos)
+Report.reportDir = reports/		
+
+#(Classe de geração de relatórios)
+Report.report1 = MessageStatsReport	
+# ----------------------------------------------
+
+# ------------------------------------------------
+# -- Configurações Padrões de Alguns Protocolos --
+# ------------------------------------------------
+ProphetRouter.secondsInTimeUnit = 30
+SprayAndWaitRouter.nrofCopies = 6
+SprayAndWaitRouter.binaryMode = true
+# ------------------------------------------------
+
+# ----------------------------------------------------------------
+# -- Configurações de Otimização (afeta velocidade da simulção) --
+# ----------------------------------------------------------------
+#(Ver Classe World para mais detalhes)
+Optimization.cellSizeMult = 5			
+
+Optimization.randomizeUpdateOrder = true
+# ----------------------------------------------------------------
+
+# ----------------------------------------
+# -- Configurações da Interface Gráfica --
+# ----------------------------------------
+#(Imagem de Fundo)
+GUI.UnderlayImage.fileName = data/helsinki_underlay.png		
+
+GUI.UnderlayImage.offset = 64, 20
+GUI.UnderlayImage.scale = 4.75
+GUI.UnderlayImage.rotate = -0.015
+
+#(Nr. de eventos apresentados no painel de log)
+GUI.EventLogPanel.nrofEvents = 100	
+# ----------------------------------------
+

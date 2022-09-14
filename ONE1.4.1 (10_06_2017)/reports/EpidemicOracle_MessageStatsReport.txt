@@ -1,0 +1,22 @@
+Message stats for scenario EpidemicOracle
+sim_time: 21600.1000
+created: 720
+started: 104107
+relayed: 104107
+aborted: 0
+dropped: 0
+removed: 34592
+delivered: 710
+delivery_prob: 0.9861
+response_prob: 0.0000
+overhead_ratio: 145.6296
+latency_avg: 283.2596
+latency_med: 271.3000
+hopcount_avg: 5.5324
+hopcount_med: 5
+buffertime_avg: 146.8057
+buffertime_med: 117.7000
+buffer_occup: 26.206407672999994
+nr_contacts: 35923
+rtt_avg: NaN
+rtt_med: NaN

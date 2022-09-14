@@ -1,0 +1,6 @@
+Scenario.name = Ciente
+Group.router = CienteRouter
+CienteRouter.ReplicationMode = true
+CienteRouter.NrReplics = 8
+CienteRouter.TimeOld = 0
+CienteRouter.TimeMax = 300

@@ -1,0 +1,6 @@
+Scenario.name = Greg
+Group.router = GregRouter
+GregRouter.ReplicationMode = true
+GregRouter.NrReplics = 8
+GregRouter.TimeOld = 0
+GregRouter.TimeMax = 300
